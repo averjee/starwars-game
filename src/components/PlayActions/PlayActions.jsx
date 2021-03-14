@@ -30,7 +30,7 @@ function PlayActions() {
         Promise.all([fetchData(peopleURL, "people"), fetchData(starshipsURL, "starships")])
             .then(() => setIsDisabled(false))
             .catch((error) => setErrorInFetch(true)) // if any of them fail, display error
-    }, [])
+    }, [dispatch])
 
     function play(list) {
         // get cards and decide winner
